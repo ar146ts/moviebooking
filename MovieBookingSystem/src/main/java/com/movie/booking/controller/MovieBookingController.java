@@ -26,6 +26,12 @@ public class MovieBookingController {
 		return null;
 	}
 	
+	@GetMapping("/hello")
+	public String getHello()
+	{
+		return "hello";
+	}
+	
 	@PostMapping("/movie")
 	public Movie createMovie(@RequestBody Movie m)
 	{
