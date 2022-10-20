@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,7 @@ public class MovieBookingController {
 		return null;
 	}
 	
+	
 	@GetMapping("/hello")
 	public String getHello()
 	{
@@ -36,6 +38,12 @@ public class MovieBookingController {
 	public String getHi()
 	{
 		return "hi";
+	}
+	
+	@GetMapping("calculator/(num1)/(num2)")
+	public int calculator(@PathVariable int num1,@PathVariable int num2)
+	{
+		return num1 + num2;
 	}
 	
 	@GetMapping("Selamat")
